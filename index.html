@@ -36,6 +36,9 @@ a { color: inherit; touch-action: manipulation; }
 #glow { position: absolute; inset: 0; width: 100%; height: 100%; mix-blend-mode: screen; pointer-events: none; }
 .wall, .bar, .tag { transition: opacity .25s; }
 .going .wall, .going .bar, .going .tag { opacity: 0; }
+/* Nothing that gets positioned by script shows until it has been placed. */
+#ad, .tag { visibility: hidden; }
+.ready #ad, .ready .tag { visibility: visible; }
 #quiet { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
 /* Each label is cut from its object's own material. */
 .tag { position: fixed; z-index: 2; left: 0; top: 0; box-shadow: 0 5px 12px rgba(0, 0, 0, .45); pointer-events: none; white-space: nowrap; }
@@ -254,7 +257,7 @@ dialog::backdrop { background: rgba(10, 9, 7, .55); }
     var d = meta.screen.map(function (p) { return [p[0] * W, p[1] * H]; });
     // Blender corners run bottom-left, bottom-right, top-right, top-left.
     ad.style.transform = 'matrix3d(' + homography([[0, 960], [540, 960], [540, 0], [0, 0]], d).join(',') + ')';
-    buildButtons(); quieten(); place(); arrive();
+    buildButtons(); quieten(); place(); document.documentElement.classList.add('ready'); arrive();
   }).catch(function () { document.getElementById('menuBtn').click(); });
 
   function who(cx, cy) {

@@ -35,6 +35,9 @@ figcaption b { display: block; font-weight: 700; }
 .tags { margin: .4rem 0 1rem; font: 500 .9375rem/1.4 var(--sans); }
 .next { display: flex; justify-content: flex-end; width: min(50rem, 100%); margin: 0 auto; padding: 0 1rem max(2.6rem, env(safe-area-inset-bottom)); }
 .next a { display: inline-flex; align-items: center; min-height: 44px; padding: 0 1.05rem; border-radius: 6px; background: var(--cream); color: var(--ink); font: 700 1rem/1 var(--sans); text-decoration: none; }
+@media (min-width: 761px) {
+  .hero:has(img) { grid-template-columns: minmax(0, 1fr) 25.2rem; }
+}
 @media (max-width: 760px) {
   .hero { grid-template-columns: minmax(0, 1fr); justify-items: center; }
   .hero > div:first-child { width: 100%; }
