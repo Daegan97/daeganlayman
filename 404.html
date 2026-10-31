@@ -1,59 +1,10 @@
 <!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<script>
-(function () {
-  var p = location.pathname, rest = location.search + location.hash;
-  if (p.indexOf('/daeganlayman/') === 0) { location.replace(p.replace('/daeganlayman/', '/') + rest); return; }
-  if (p === '/daeganlayman') { location.replace('/' + rest); return; }
-  var creative = ['/ms-paint.html', '/slow-and-steady.html', '/work.json', '/site.css', '/motion.js'];
-  if (creative.indexOf(p) >= 0 || p.indexOf('/assets/') === 0) { location.replace('/creative' + p + rest); }
-})();
-</script>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Page not found · Daegan Layman</title>
-<meta name="description" content="This page could not be found.">
-<meta name="author" content="Daegan Layman">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Daegan Layman">
-<meta property="og:title" content="Page not found · Daegan Layman">
-<meta property="og:description" content="This page could not be found.">
-<meta property="og:url" content="https://daegan97.github.io/">
-<meta property="og:image" content="https://daegan97.github.io/assets/share-card.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Daegan Layman, writer and researcher">
-<meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<meta name="theme-color" content="#1f3f66">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/style.css?v=9ded4973">
-</head>
-<body>
-<header class="masthead">
-  <a class="name" href="/">Daegan Layman</a>
-  <nav aria-label="Rooms"><a href="/writing/">Writing</a><a href="/research/">Research</a><a href="/strategy/">Strategy</a><a href="/about/">About</a></nav>
-</header>
-<main>
-<section class="home notfound">
-  <p class="kicker">Page not found</p>
-  <h1>This page isn’t here.</h1>
-  <p class="lede">The link may be mistyped, or the piece may have moved. Everything on the site is one click from here:</p>
-</section>
-<nav class="doors" aria-label="Rooms">
-  <a class="door" href="/writing/"><span class="kicker">01</span><span class="door-title">Writing</span><span class="door-desc">Essays, an op-ed, copy and short fiction.</span></a>
-  <a class="door" href="/research/"><span class="kicker">02</span><span class="door-title">Research</span><span class="door-desc">Law, policy, criminal justice and fraud, plus statistical analysis.</span></a>
-  <a class="door" href="/about/"><span class="kicker">03</span><span class="door-title">About &amp; resume</span><span class="door-desc">Who I am, and my full resume.</span></a>
-</nav>
-</main>
-<footer class="colophon">
-  <p><a href="/">Daegan Layman</a> · Writer and researcher · Oklahoma City / remote</p>
-  <p><a href="mailto:daegantassey@gmail.com">daegantassey@gmail.com</a></p>
-</footer>
-</body>
-</html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Not on this desk, Daegan Layman</title>
+<script src="/assets/lamp.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,400..900&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400&family=Caveat:wght@600;700&family=Special+Elite&display=swap" rel="stylesheet"><link rel="stylesheet" href="/assets/inner.css">
+</head><body class="ondesk">
+<nav class="top" aria-label="Page"><a href="/index.html">Back to the desk</a><button type="button" id="lamp">Lamp off</button></nav>
+<header class="deskhead"><h1>Not on this desk</h1><p>That page isn’t here. It may have moved when the site changed.</p></header>
+</body></html>

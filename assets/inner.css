@@ -1,0 +1,30 @@
+/* Shared by the pages behind the desk. Colours come from the render: wall, walnut, manila, paper. */
+:root { --ink: #17233f; --cream: #f6efdc; --manila: #d9b777; --manila-ink: #20180c; --stamp: #8a1c24; --walnut: #3a2413; --brass: #c79a4a; --sans: "Archivo", system-ui, sans-serif; --serif: "Newsreader", Georgia, serif; --type: "Special Elite", "Courier New", monospace; }
+:root, :root[data-lamp="day"] { --wall: #2d4a44; --on-wall: #f6efdc; --read-bg: #e4ebe4; --read-ink: #17233f; --read-soft: #3d4c5c; --read-rule: #a9bab0; --read-link: #8a1c24; }
+:root[data-lamp="night"] { --wall: #16211f; --on-wall: #f6efdc; --read-bg: #16211f; --read-ink: #efe8d6; --read-soft: #c2c6b8; --read-rule: #3f5550; --read-link: #f0a58f; }
+* { box-sizing: border-box; }
+html { -webkit-tap-highlight-color: transparent; -webkit-text-size-adjust: 100%; }
+body { margin: 0; font-family: var(--serif); transition: background-color .45s, color .45s; }
+a { touch-action: manipulation; }
+button { font: inherit; color: inherit; touch-action: manipulation; user-select: none; cursor: pointer; }
+:focus-visible { outline: 3px solid #ffd27a; outline-offset: 3px; border-radius: 3px; }
+
+/* Pages that lie on the desk: the render, blurred, is the background. */
+:root { --desk: url(desk/wide-day.webp); --base: #6b3e24; }
+:root[data-lamp="night"] { --desk: url(desk/wide-night.webp); --base: #1c120b; }
+body.ondesk { background: var(--base); color: var(--cream); }
+body.ondesk::before { content: ""; position: fixed; inset: -20px; z-index: -1; background: var(--desk) center bottom / auto 175% no-repeat; filter: blur(5px) brightness(.68); }
+.deskhead { width: min(72rem, 100%); margin: 0 auto; padding: 1rem 1rem 2rem; text-shadow: 0 2px 14px rgba(10, 9, 7, .7); }
+.deskhead h1 { margin: 0; font: 900 clamp(3.6rem, 13vw, 8.4rem)/.9 var(--sans); font-stretch: 112%; letter-spacing: -.035em; }
+.deskhead p { max-width: 38em; margin: 1rem 0 0; font: 400 clamp(1.125rem, 2vw, 1.3125rem)/1.45 var(--serif); }
+.group { display: flex; gap: .5rem; }
+
+.top { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: max(.7rem, env(safe-area-inset-top)) max(1rem, env(safe-area-inset-right)) .7rem max(1rem, env(safe-area-inset-left)); font: 600 .9375rem/1 var(--sans); }
+.top a, .top button { display: inline-flex; align-items: center; min-height: 44px; padding: 0 1rem; border: 0; border-radius: 999px; background: rgba(20, 17, 13, .78); color: var(--cream); text-decoration: none; }
+.top a, .top button { white-space: nowrap; }
+@media (max-width: 420px) { .top { gap: .4rem; padding-left: .6rem; padding-right: .6rem; } .group { gap: .3rem; } .top a, .top button { padding: 0 .7rem; font-size: .875rem; } }
+.top a:active, .top button:active { opacity: .8; }
+@media (hover: hover) and (pointer: fine) {
+  .top a:hover, .top button:hover { background: var(--cream); color: var(--ink); }
+}
+.foot a, .close a { display: inline-flex; align-items: center; min-height: 44px; }

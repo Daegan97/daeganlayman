@@ -2,15 +2,14 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Daegan Layman · Writer and researcher</title>
-<meta name="description" content="Daegan Layman: writer and researcher in Oklahoma City. Essays, research and creative strategy.">
-<meta name="author" content="Daegan Layman">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Daegan Layman's desk</title>
+<meta name="description" content="Daegan Layman: writer and researcher. Explore his desk, or use the menu.">
 <link rel="canonical" href="https://daegan97.github.io/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Daegan Layman">
-<meta property="og:title" content="Daegan Layman · Writer and researcher">
-<meta property="og:description" content="Daegan Layman: writer and researcher in Oklahoma City. Essays, research and creative strategy.">
+<meta property="og:title" content="Daegan Layman, writer and researcher">
+<meta property="og:description" content="Explore my desk: writing, research, ads and my resume.">
 <meta property="og:url" content="https://daegan97.github.io/">
 <meta property="og:image" content="https://daegan97.github.io/assets/share-card.png">
 <meta property="og:image:width" content="1200">
@@ -20,50 +19,384 @@
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
-<meta name="theme-color" content="#1f3f66">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=9ded4973">
+<meta name="theme-color" content="#2d4a44">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,400..900&family=Newsreader:opsz,wght@6..72,400;6..72,500&family=Caveat:wght@600;700&family=Special+Elite&display=swap" rel="stylesheet">
+<style>
+:root { --cream: #f6efdc; --ink: #17233f; --red: #b3242c; --paper: #fbf6e6; --sans: "Archivo", system-ui, sans-serif; --serif: "Newsreader", Georgia, serif; }
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; overflow: hidden; background: #14110d; color: var(--cream); font-family: var(--sans); -webkit-tap-highlight-color: transparent; }
+button { font: inherit; color: inherit; touch-action: manipulation; user-select: none; cursor: pointer; }
+a { color: inherit; touch-action: manipulation; }
+:focus-visible { outline: 3px solid #ffd27a; outline-offset: 3px; border-radius: 3px; }
+
+#stage { position: fixed; left: 0; top: 0; transform-origin: 0 0; cursor: default; will-change: transform; }
+#stage img.scene { position: absolute; inset: 0; width: 100%; height: 100%; display: block; user-select: none; -webkit-user-drag: none; pointer-events: none; }
+#night { opacity: 0; }
+#glow { position: absolute; inset: 0; width: 100%; height: 100%; mix-blend-mode: screen; pointer-events: none; }
+.wall, .bar, .tag { transition: opacity .25s; }
+.going .wall, .going .bar, .going .tag { opacity: 0; }
+#quiet { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+/* Each label is cut from its object's own material. */
+.tag { position: fixed; z-index: 2; left: 0; top: 0; box-shadow: 0 5px 12px rgba(0, 0, 0, .45); pointer-events: none; white-space: nowrap; }
+.tag[data-for="writing"] { --r: -3deg; padding: .05rem .8rem .15rem; background: #f7ec9e; border-top: 5px solid #a3262e; color: var(--ink); font: 700 1.875rem/1.1 "Caveat", cursive; }
+.tag[data-for="research"] { --r: 1.5deg; padding: .5rem .95rem .4rem; background: #d9b777; border-radius: 7px 7px 0 0; color: #20180c; font: 400 1.25rem/1 "Special Elite", monospace; }
+.tag[data-for="ads"] { --r: -5deg; padding: .4rem .75rem; background: #b3242c; border-radius: 2px; color: #fff; font: 800 1.1875rem/1 var(--sans); font-stretch: 112%; letter-spacing: .09em; box-shadow: inset 0 1px 0 rgba(255, 255, 255, .35), inset 0 -2px 0 rgba(0, 0, 0, .3), 0 4px 10px rgba(0, 0, 0, .45); }
+#veil { position: fixed; inset: 0; z-index: 6; opacity: 0; pointer-events: none; }
+#ad { position: absolute; left: 0; top: 0; width: 540px; height: 960px; transform-origin: 0 0; object-fit: cover; pointer-events: none; background: #000; }
+.spot { position: absolute; background: none; border: 0; padding: 0; opacity: 0; pointer-events: none; }
+.spot:focus-visible { opacity: 1; outline-width: 8px; }
+
+/* Big type lives on the wall */
+.wall { position: fixed; z-index: 2; left: max(2.2vw, 16px); top: max(1.4vh, env(safe-area-inset-top)); pointer-events: none; transition: color .55s; }
+h1 { margin: 0; font-weight: 900; font-stretch: 112%; font-size: clamp(3rem, 7.6vw, 8.4rem); line-height: .9; letter-spacing: -.035em; color: var(--cream); }
+h1 span { display: block; }
+.lede { margin: .9rem 0 0; max-width: 26em; font: 500 clamp(1rem, 1.4vw, 1.3rem)/1.35 var(--sans); }
+
+.bar { position: fixed; z-index: 3; right: max(1.2vw, 12px); top: max(1.2vh, env(safe-area-inset-top)); display: flex; align-items: center; gap: .6rem; font: 600 .9375rem/1 var(--sans); }
+.bar .pill { display: inline-flex; align-items: center; min-height: 44px; padding: 0 1rem; border-radius: 999px; background: rgba(20, 17, 13, .78); color: var(--cream); border: 0; backdrop-filter: blur(4px); }
+.bar a.pill { text-decoration: none; }
+
+#tip { position: fixed; z-index: 4; left: 0; top: 0; padding: .4rem .7rem; border-radius: 6px; background: var(--paper); color: var(--ink); font: 700 .9375rem/1.2 var(--sans); pointer-events: none; opacity: 0; transition: opacity .12s; white-space: nowrap; box-shadow: 0 6px 18px rgba(0, 0, 0, .35); }
+#tip.on { opacity: 1; }
+
+/* The dialog is the whole screen, so sheets can tilt and overhang; a sheet taller than the screen scrolls. */
+dialog { width: 100vw; height: 100dvh; max-width: none; max-height: none; margin: 0; border: 0; padding: max(2.2rem, env(safe-area-inset-top)) 1rem max(1.5rem, env(safe-area-inset-bottom)); background: none; color: var(--ink); overflow: hidden auto; }
+dialog[open] { display: flex; }
+dialog::backdrop { background: rgba(10, 9, 7, .55); }
+.note { width: min(30rem, calc(100vw - 2rem)); flex: none; margin: auto; background: var(--paper); padding: 1.5rem 1.6rem 1.3rem; border-radius: 3px; box-shadow: 0 30px 70px rgba(0, 0, 0, .55); position: relative; }
+.note:focus { outline: 0; }
+.note h2 { margin: 0 0 .5rem; font: 900 clamp(1.7rem, 4vw, 2.3rem)/1 var(--sans); font-stretch: 112%; letter-spacing: -.02em; }
+.note p { margin: 0 0 .9rem; font: 400 1.1875rem/1.45 var(--serif); }
+.note .acts { display: flex; flex-wrap: wrap; align-items: center; gap: .6rem 1rem; }
+.note .go, .note .plain { display: inline-flex; align-items: center; min-height: 44px; font: 700 1rem/1 var(--sans); border-radius: 6px; }
+.note .go { background: var(--ink); color: var(--paper); padding: 0 1.05rem; text-decoration: none; border: 0; }
+.note .plain { background: none; border: 0; padding: 0 .3rem; text-decoration: underline; text-underline-offset: .2em; }
+
+/* Writing: a page torn off the legal pad */
+.k-writing { width: min(34rem, calc(100vw - 2rem)); background: repeating-linear-gradient(#f7ec9e 0 33px, #9bbcd1 33px 34px); padding: 3.4rem 1.6rem 1.4rem 4.2rem; border-top: 26px solid #a3262e; border-radius: 2px; transform: rotate(-1.2deg); }
+.k-writing::before { content: ""; position: absolute; left: 3rem; top: 0; bottom: 0; width: 3px; background: #c9414a; }
+.k-writing h2 { font: 700 3.6rem/1 "Caveat", cursive; letter-spacing: 0; }
+.k-writing p { font: 600 1.7rem/34px "Caveat", cursive; margin-bottom: 34px; }
+
+/* Research: an opened case file */
+.k-research { width: min(36rem, calc(100vw - 2rem)); background: #d9b777; color: #20180c; padding: 2.4rem 1.8rem 1.5rem; border-radius: 3px 8px 3px 3px; transform: rotate(.7deg); }
+.k-research::before { content: "CASE FILE"; position: absolute; left: 0; top: -26px; height: 26px; padding: 6px 1.1rem 0; background: #d9b777; border-radius: 6px 6px 0 0; font: 400 .875rem/1 "Special Elite", monospace; }
+.k-research::after { content: "OPEN"; position: absolute; right: 1.4rem; top: 1.1rem; padding: .25rem .6rem; border: 3px solid #8a1c24; color: #8a1c24; font: 400 1.3rem/1 "Special Elite", monospace; transform: rotate(-9deg); }
+.k-research h2 { font: 400 2.5rem/1 "Special Elite", monospace; letter-spacing: 0; }
+.k-research p { font: 400 1.0625rem/1.5 "Special Elite", monospace; }
+.k-research .go { background: #20180c; color: #f1dfb6; }
+
+/* About: a sheet from the resume, with the brass nameplate on top */
+.k-about { width: min(32rem, calc(100vw - 2rem)); padding-top: 0; transform: rotate(.5deg); }
+.k-about h2 { margin: 0 -1.6rem 1.2rem; padding: 1rem 1.6rem; background: linear-gradient(100deg, #b98a3c, #e7c98a 45%, #b98a3c); color: #2a170d; font: 700 1.5rem/1.1 Georgia, serif; letter-spacing: .01em; }
+
+/* Small finds: a sticky note pinned up */
+.k-find { width: min(23rem, calc(100vw - 2.4rem)); background: #fbe58a; padding: 2.1rem 1.5rem 1.2rem; transform: rotate(-2.2deg); border-radius: 1px 1px 18px 1px / 1px 1px 8px 1px; }
+.k-find::before { content: ""; position: absolute; left: 50%; top: 10px; width: 18px; height: 18px; margin-left: -9px; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #f07a7f, #b3242c 60%); box-shadow: 0 3px 5px rgba(0, 0, 0, .4); }
+.k-find h2 { font: 700 2.8rem/1 "Caveat", cursive; letter-spacing: 0; }
+.k-find p { font: 600 1.5rem/1.2 "Caveat", cursive; }
+.k-find .go { background: #b3242c; color: #fff; }
+
+/* Ads: the ad gets the room */
+.k-ads { width: min(52rem, calc(100vw - 2rem)); display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 1.6rem; align-items: center; background: #14110d; color: var(--cream); padding: 1.2rem; border-radius: 14px; }
+.k-ads video { display: block; height: min(78vh, 42rem); aspect-ratio: 9 / 16; border-radius: 10px; background: #000; }
+.k-ads h2 { font-size: clamp(2.6rem, 6vw, 4.6rem); line-height: .92; margin-bottom: .8rem; }
+.k-ads .go { background: var(--cream); color: var(--ink); }
+.k-ads .plain { color: var(--cream); }
+@media (max-width: 720px) {
+  .k-ads { display: block; padding: .7rem; }
+  .k-ads video { height: 62dvh; margin: 0 auto .7rem; }
+  .k-ads h2 { font-size: 2.2rem; margin-bottom: .3rem; }
+  .k-ads p { font-size: 1rem; margin-bottom: .5rem; }
+}
+/* Menu: a typed index card */
+.k-menu { width: min(27rem, calc(100vw - 2rem)); padding-top: 2.4rem; transform: rotate(-.8deg); background: linear-gradient(#c9414a, #c9414a) 0 1.7rem / 100% 2px no-repeat, var(--paper); }
+.k-menu .plain { font-family: var(--sans); }
+@media (max-height: 480px) {
+  dialog { padding-top: max(.6rem, env(safe-area-inset-top)); padding-bottom: max(.6rem, env(safe-area-inset-bottom)); }
+  .k-ads video { height: calc(100dvh - 5rem); }
+}
+.menu { list-style: none; margin: 0 0 1rem; padding: 0; }
+.menu a { display: flex; align-items: center; min-height: 48px; font: 400 1.375rem/1.1 "Special Elite", monospace; text-decoration: none; border-bottom: 1px solid #9bbcd1; }
+
+@media (hover: hover) and (pointer: fine) {
+  .bar .pill:hover { background: var(--paper); color: var(--ink); }
+  .menu a:hover, .note .plain:hover { color: var(--red); }
+}
+.go:active, .pill:active { opacity: .8; }
+@media (max-width: 720px) {
+  h1 { font-size: clamp(2.9rem, 15vw, 5rem); text-shadow: 0 2px 16px rgba(10, 9, 7, .7); }
+  .wall { top: calc(max(1.2vh, env(safe-area-inset-top)) + 54px); }
+  .lede { margin-top: .4rem; text-shadow: 0 1px 8px rgba(10, 9, 7, .8); }
+}
+</style>
 </head>
 <body>
-<header class="masthead">
-  <a class="name" href="index.html">Daegan Layman</a>
-  <nav aria-label="Rooms"><a href="writing/index.html">Writing</a><a href="research/index.html">Research</a><a href="strategy/index.html">Strategy</a><a href="about/index.html">About</a></nav>
-</header>
-<main>
-<section class="home">
-  <div class="hero">
-    <div>
-      <p class="kicker">Writer · Researcher · Oklahoma City / remote</p>
-      <h1>Daegan Layman</h1>
-    </div>
-    <img class="hero-photo" src="assets/headshot.jpg" width="600" height="600" alt="Daegan Layman">
-  </div>
-  <p class="lede">I write essays and arguments about law, risk and media, research on criminal justice and fraud, and ads that get people to stop and care.</p>
-  <p>M.S. in Criminal Justice (Fraud Management), B.A. in Law and Society, and eight years of teaching and tutoring. Open to remote work, or on-site in Oklahoma City.</p>
-  <div class="cta">
-    <a class="button" href="about/index.html">About &amp; resume</a>
-    <a class="button ghost" href="assets/Daegan_Layman_Resume.pdf">Download resume (PDF)</a>
-    <a class="cta-mail" href="mailto:daegantassey@gmail.com">daegantassey@gmail.com</a>
-  </div>
-</section>
-<nav class="doors" aria-label="Rooms">
-  <a class="door" href="writing/index.html"><span class="kicker">01</span><span class="door-title">Writing</span><span class="door-desc">Essays, an op-ed, copy and short fiction.</span></a>
-  <a class="door" href="research/index.html"><span class="kicker">02</span><span class="door-title">Research</span><span class="door-desc">Law, policy, criminal justice and fraud, plus statistical analysis.</span></a>
-  <a class="door" href="strategy/index.html"><span class="kicker">03</span><span class="door-title">Strategy</span><span class="door-desc">Paid-social creative strategy, briefs and case studies.</span></a>
-</nav>
+<noscript><p style="position:fixed;z-index:9;inset:auto 1rem 1rem;padding:1rem;background:#fbf6e6;color:#17233f"><a href="writing/index.html">Writing</a>, <a href="research/index.html">Research</a>, <a href="ads/index.html">Ads</a>, <a href="about/index.html">About and resume</a></p></noscript>
+<div id="stage">
+  <img class="scene" id="day" alt="">
+  <img class="scene" id="night" alt="">
+  <video id="ad" src="assets/ads/the-map.mp4" muted loop playsinline preload="auto"></video>
+  <canvas id="quiet"></canvas>
+  <canvas id="glow"></canvas>
+</div>
+<div id="veil"></div>
+<div class="tag" data-for="writing" aria-hidden="true">Writing</div>
+<div class="tag" data-for="research" aria-hidden="true">Research</div>
+<div class="tag" data-for="ads" aria-hidden="true">Ads</div>
+
+<div class="wall">
+  <h1><span>Daegan</span><span>Layman</span></h1>
+  <p class="lede">Writer and researcher</p>
+</div>
+
+<div class="bar">
+  <button class="pill" type="button" id="menuBtn">Menu</button>
+</div>
+<div id="tip" aria-hidden="true"></div>
+
+<dialog id="noteD" aria-labelledby="noteH"><div class="note" id="noteC" tabindex="-1"><div id="noteV"></div><div><h2 id="noteH"></h2><p id="noteP"></p><div class="acts" id="noteA"></div></div></div></dialog>
+<dialog id="menuD" aria-label="Menu"><div class="note k-menu">
+  <ul class="menu">
+    <li><a href="writing/index.html">Writing</a></li>
+    <li><a href="research/index.html">Research</a></li>
+    <li><a href="ads/index.html">Ads</a></li>
+    <li><a href="about/index.html">About and resume</a></li>
+    <li><a href="assets/Daegan_Layman_Resume.pdf">Resume (PDF)</a></li>
+    <li><a href="mailto:daegantassey@gmail.com">Email me</a></li>
+  </ul>
+  <div class="acts"><button class="plain" type="button" id="menuClose">Back to the desk</button></div>
+</div></dialog>
+
 <script>
 (function () {
-  var ids = ['addr', 'awareness', 'briefs', 'cases', 'contact', 'copy', 'problem', 'process', 'reel', 'systems', 'theory', 'top', 'work', 'writing'];
-  var h = location.hash.slice(1);
-  if (h && ids.indexOf(h) >= 0) { location.replace('/creative/#' + h); }
+  var THINGS = {
+    writing: { label: 'Writing', title: 'Writing', text: 'Essays and arguments about law, risk and media, plus an op-ed, ad copy and short fiction.', href: 'writing/index.html', go: 'Read my writing' },
+    research: { label: 'Research', title: 'Research', text: 'Legal analysis, policy memos, a fraud investigation plan and statistics, from my M.S. in Criminal Justice.', href: 'research/index.html', go: 'Open the case files' },
+    ads: { label: 'Ads', title: 'The Map', text: 'My newest ad, not launched yet: a 45-second treasure hunt that ends on a real card. Everything I do in ads is on the next page.', href: 'ads/index.html', go: 'See my ads and briefs', sound: true },
+    about: { label: 'About and resume', title: 'About and resume', text: 'Ten years of explaining things to people: tutor, teacher, re-entry care navigator, child welfare specialist and creative strategist.', href: 'about/index.html', go: 'Read about me' },
+    mug: { label: 'Coffee', title: 'Careful, it’s hot', text: 'The McDonald’s hot-coffee case is where one of my essays starts: what companies owe us for the risks they already calculate.', href: 'writing/scalding-coffee/index.html', go: 'Read Scalding Coffee' },
+    die: { label: 'A d20', title: 'Natural 20', text: 'I ran the Dungeons & Dragons club at Longfellow Middle School.' },
+    pick: { label: 'A guitar pick', title: 'Guitar club', text: 'I co-led the guitar club at Longfellow Middle School with another teacher.' },
+    pawn: { label: 'A pawn', title: 'Chess club', text: 'From my time teaching English at Le Monde International School, where I helped with the chess club.' },
+    apple: { label: 'An apple', title: 'For the teacher', text: 'More than eight years of teaching and tutoring: 8th grade math, 6th to 8th grade English, and college and AP students one on one.' },
+    books: { label: 'A novel', title: 'Circuit of Ash', text: 'The book on top is my novel. It’s unpublished, for now.' },
+    plant: { label: 'A plant', title: 'Still alive', text: 'In 2016 I was an AmeriCorps VISTA at the Regional Food Bank of Oklahoma, helping keep a 2.5-acre organic garden that supplied food pantries.' },
+    board: { label: 'The board', title: 'Red string', text: 'My master’s is in fraud management, and I’ve investigated child welfare cases.' },
+    lamp: { label: 'The lamp', title: '', text: '' }
+  };
+  var COUNTED = Object.keys(THINGS);
+  function tween(ms, step, done) {
+    if (calm) { step(1); if (done) done(); return; }
+    var t0 = performance.now();
+    (function f(t) { var k = Math.min((t - t0) / ms, 1); step(1 - Math.pow(1 - k, 3)); if (k < 1) requestAnimationFrame(f); else if (done) done(); })(t0);
+  }
+  var stage = document.getElementById('stage'), ad = document.getElementById('ad'), glow = document.getElementById('glow');
+  var tip = document.getElementById('tip');
+  var noteD = document.getElementById('noteD'), menuD = document.getElementById('menuD');
+  var calm = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var tall = innerWidth / innerHeight < .85, name = tall ? 'tall' : 'wide';
+  var W = tall ? 1170 : 2400, H = tall ? 2080 : 1500, meta, ids, byValue = {}, scale = 1, ox = 0, oy = 0, hover = null, g = glow.getContext('2d');
+  var veil = document.getElementById('veil'), moving = false, masks = {}, q = document.getElementById('quiet').getContext('2d'), tags = [].slice.call(document.querySelectorAll('.tag'));
+  var EXTRAS = ['mug', 'die', 'pick', 'pawn', 'apple', 'books', 'plant', 'board'];
+
+  stage.style.width = W + 'px'; stage.style.height = H + 'px'; glow.width = W; glow.height = H; q.canvas.width = W; q.canvas.height = H;
+  document.getElementById('day').src = 'assets/desk/' + name + '-day.webp';
+  document.getElementById('night').src = 'assets/desk/' + name + '-night.webp';
+
+  function place(px, py) {
+    scale = Math.max(innerWidth / W, innerHeight / H) * (calm ? 1 : 1.02);
+    ox = (innerWidth - W * scale) * (.5 + (px || 0) * .9);
+    // On wide screens, crop the wall rather than the front of the desk, where the small objects sit.
+    oy = (innerHeight - H * scale) * Math.min(1, Math.max(0, (tall ? .5 : .85) + (py || 0) * .9));
+    stage.style.transform = 'translate(' + ox + 'px,' + oy + 'px) scale(' + scale + ')';
+    if (ids) tags.forEach(function (t) {
+      var b = mask(t.dataset.for).box, w = t.offsetWidth;
+      var x = Math.max(8, Math.min(innerWidth - w - 8, ox + (b[0] + b[2]) / 2 * scale - w / 2));
+      t.style.transform = 'translate(' + x + 'px,' + (oy + b[1] * scale - t.offsetHeight * .6) + 'px) rotate(var(--r))';
+    });
+  }
+  // Turning a phone crosses between the two renders, which have different layouts.
+  addEventListener('resize', function () { if (innerWidth / innerHeight < .85 !== tall && !noteD.open && !menuD.open) location.reload(); else place(); });
+  place();
+  ['600 1rem Caveat', '400 1rem "Special Elite"', '400 1rem Newsreader'].forEach(function (f) { document.fonts.load(f); });
+  var lampSaved = null; try { lampSaved = localStorage.getItem('lamp'); } catch (e) {}
+  if (lampSaved ? lampSaved === 'night' : matchMedia('(prefers-color-scheme: dark)').matches) { document.body.classList.add('dark'); document.getElementById('night').style.opacity = 1; }
+  if (location.hash && !calm) { veilFor(location.hash.slice(1)); veil.style.opacity = 1; } // hide the desk until the pull-back starts
+
+  // Fit a 540x960 video to the phone's four projected corners.
+  function homography(src, dst) {
+    var A = [], b = [];
+    for (var i = 0; i < 4; i++) {
+      var x = src[i][0], y = src[i][1], u = dst[i][0], v = dst[i][1];
+      A.push([x, y, 1, 0, 0, 0, -x * u, -y * u]); b.push(u);
+      A.push([0, 0, 0, x, y, 1, -x * v, -y * v]); b.push(v);
+    }
+    for (var c = 0; c < 8; c++) {
+      var p = c; for (var r = c + 1; r < 8; r++) if (Math.abs(A[r][c]) > Math.abs(A[p][c])) p = r;
+      var t = A[c]; A[c] = A[p]; A[p] = t; t = b[c]; b[c] = b[p]; b[p] = t;
+      for (r = 0; r < 8; r++) if (r !== c) { var f = A[r][c] / A[c][c]; for (var k = c; k < 8; k++) A[r][k] -= f * A[c][k]; b[r] -= f * b[c]; }
+    }
+    var h = b.map(function (v, i) { return v / A[i][i]; });
+    return [h[0], h[3], 0, h[6], h[1], h[4], 0, h[7], 0, 0, 1, 0, h[2], h[5], 0, 1];
+  }
+
+  Promise.all([
+    fetch('assets/desk/' + name + '-id.json').then(function (r) { return r.json(); }),
+    new Promise(function (res, rej) { var i = new Image(); i.onload = function () { res(i); }; i.onerror = rej; i.src = 'assets/desk/' + name + '-id.png'; })
+  ]).then(function (out) {
+    meta = out[0];
+    var c = document.createElement('canvas'); c.width = W; c.height = H;
+    var x = c.getContext('2d', { willReadFrequently: true }); x.drawImage(out[1], 0, 0, W, H);
+    ids = x.getImageData(0, 0, W, H).data;
+    Object.keys(meta.ids).forEach(function (n) { byValue[meta.ids[n]] = n; });
+    var d = meta.screen.map(function (p) { return [p[0] * W, p[1] * H]; });
+    // Blender corners run bottom-left, bottom-right, top-right, top-left.
+    ad.style.transform = 'matrix3d(' + homography([[0, 960], [540, 960], [540, 0], [0, 0]], d).join(',') + ')';
+    buildButtons(); quieten(); place(); arrive();
+  }).catch(function () { document.getElementById('menuBtn').click(); });
+
+  function who(cx, cy) {
+    if (!ids) return null;
+    var x = Math.round((cx - ox) / scale), y = Math.round((cy - oy) / scale);
+    if (x < 0 || y < 0 || x >= W || y >= H) return null;
+    var v = ids[(y * W + x) * 4];
+    return byValue[Math.round(v / 18) * 18] || null;
+  }
+  // A fingertip is bigger than a guitar pick: take the nearest object within 22 screen pixels.
+  function near(cx, cy) {
+    var n = who(cx, cy);
+    for (var r = 6; !n && r <= 22; r += 8) for (var a = 0; !n && a < 8; a++) n = who(cx + r * Math.cos(a * Math.PI / 4), cy + r * Math.sin(a * Math.PI / 4));
+    return n;
+  }
+  function mask(n) {
+    if (masks[n]) return masks[n];
+    var v = meta.ids[n], minX = W, minY = H, maxX = 0, maxY = 0, c = document.createElement('canvas'); c.width = W; c.height = H;
+    var x = c.getContext('2d'), im = x.createImageData(W, H), d = im.data;
+    for (var i = 0, p = 0; i < ids.length; i += 4, p++) {
+      if (Math.abs(ids[i] - v) < 4) {
+        d[i] = 255; d[i + 1] = 214; d[i + 2] = 150; d[i + 3] = 255;
+        var px = p % W, py = (p / W) | 0;
+        if (px < minX) minX = px; if (px > maxX) maxX = px; if (py < minY) minY = py; if (py > maxY) maxY = py;
+      }
+    }
+    x.putImageData(im, 0, 0);
+    return masks[n] = { c: c, box: [minX, minY, maxX, maxY] };
+  }
+  function light(n) {
+    if (n === hover) return;
+    hover = n; g.clearRect(0, 0, W, H);
+    if (n) { g.globalAlpha = .27; g.drawImage(mask(n).c, 0, 0); g.globalAlpha = 1; }
+    quieten(n);
+    stage.style.cursor = n ? 'pointer' : 'default';
+  }
+  // The small finds sit back until someone goes looking for them.
+  function quieten(except) {
+    q.clearRect(0, 0, W, H);
+    EXTRAS.forEach(function (n) { if (n !== except && meta.ids[n] != null) q.drawImage(mask(n).c, 0, 0); });
+    q.globalCompositeOperation = 'source-in'; q.fillStyle = 'rgba(12, 10, 8, .5)'; q.fillRect(0, 0, W, H);
+    q.globalCompositeOperation = 'source-over';
+  }
+  function buildButtons() {
+    COUNTED.forEach(function (n) {
+      if (meta.ids[n] == null) return;
+      var b = document.createElement('button'), box = mask(n).box;
+      b.className = 'spot'; b.type = 'button'; b.setAttribute('aria-label', THINGS[n].label);
+      b.style.cssText = 'left:' + box[0] + 'px;top:' + box[1] + 'px;width:' + (box[2] - box[0]) + 'px;height:' + (box[3] - box[1]) + 'px';
+      b.addEventListener('click', function () { open(n); });
+      b.addEventListener('focus', function () { light(n); }); b.addEventListener('blur', function () { light(null); });
+      stage.appendChild(b);
+    });
+  }
+  // Moving in on an object until it becomes its page, and pulling back out on return.
+  // The zoom stops at 1.3x the render's own pixels, or it goes soft; the veil takes over from there.
+  function framing(n) {
+    var b = mask(n).box, s = Math.min(1.3, Math.max(innerWidth / (b[2] - b[0]), innerHeight / (b[3] - b[1])) * 1.15);
+    s = Math.max(s, scale);
+    return [s, Math.min(0, Math.max(innerWidth - W * s, innerWidth / 2 - (b[0] + b[2]) / 2 * s)), Math.min(0, Math.max(innerHeight - H * s, innerHeight / 2 - (b[1] + b[3]) / 2 * s))];
+  }
+  function fly(a, b, ms, shade, done) {
+    moving = true;
+    tween(ms, function (k) {
+      var s = a[0] + (b[0] - a[0]) * k, x = a[1] + (b[1] - a[1]) * k, y = a[2] + (b[2] - a[2]) * k;
+      stage.style.transform = 'translate(' + x + 'px,' + y + 'px) scale(' + s + ')';
+      veil.style.opacity = shade(k);
+    }, done);
+  }
+  function veilFor(n) {
+    var night = document.body.classList.contains('dark');
+    veil.style.background = n === 'research' ? (night ? '#16211f' : '#2d4a44') : (night ? '#1c120b' : '#6b3e24');
+  }
+  function enter(href, n) {
+    if (calm) { location.href = href; return; }
+    document.documentElement.classList.add('going'); veilFor(n);
+    fly([scale, ox, oy], framing(n), 620, function (k) { return Math.max(0, (k - .55) / .4); }, function () { location.href = href; });
+    setTimeout(function () { location.href = href; }, 900); // animation frames stop in a hidden tab
+  }
+  function arrive() {
+    var n = location.hash.slice(1); veil.style.opacity = 0; if (!meta.ids[n]) return;
+    history.replaceState(null, '', location.pathname);
+    if (calm) return;
+    veilFor(n); veil.style.opacity = 1;
+    fly(framing(n), [scale, ox, oy], 700, function (k) { return Math.max(0, 1 - k * 1.8); }, function () { moving = false; veil.style.opacity = 0; place(); });
+    setTimeout(function () { if (moving) { moving = false; veil.style.opacity = 0; place(); } }, 1000);
+  }
+  addEventListener('pageshow', function (e) { if (e.persisted) { document.documentElement.classList.remove('going'); moving = false; veil.style.opacity = 0; place(); } });
+  function open(n) {
+    var t = THINGS[n]; tip.classList.remove('on');
+    if (n === 'lamp') {
+      var on = document.body.classList.toggle('dark'), nt = document.getElementById('night'), from = +getComputedStyle(nt).opacity;
+      tween(450, function (k) { nt.style.opacity = from + ((on ? 1 : 0) - from) * k; });
+      try { localStorage.setItem('lamp', on ? 'night' : 'day'); } catch (e) {}
+      return;
+    }
+    if (n === 'research' || n === 'writing' || n === 'about') { enter(t.href, n); return; }
+    var c = document.getElementById('noteC'), V = document.getElementById('noteV');
+    var main = { writing: 1, research: 1, about: 1, ads: 1 };
+    c.className = 'note ' + (main[n] ? 'k-' + n : 'k-find');
+    V.innerHTML = ''; V.style.display = t.sound ? '' : 'none';
+    if (t.sound) {
+      // The ad moves off the desk and into the screening, at the same point, with its sound on.
+      var big = document.createElement('video'); big.src = ad.src; big.controls = true; big.playsInline = true; big.currentTime = ad.currentTime; big.setAttribute('aria-label', 'The Map, a 45-second ad');
+      V.appendChild(big); ad.pause(); big.play().catch(function () { big.muted = true; big.play(); });
+    }
+    document.getElementById('noteH').textContent = t.title;
+    document.getElementById('noteP').textContent = t.text;
+    var a = document.getElementById('noteA'); a.innerHTML = '';
+    if (t.href) {
+      var l = document.createElement('a'); l.className = 'go'; l.href = t.href; l.textContent = t.go; a.appendChild(l);
+      if (!/^http/.test(t.href)) l.addEventListener('click', function (e) { e.preventDefault(); noteD.close(); enter(t.href, n); });
+    }
+    var b = document.createElement('button'); b.className = 'plain'; b.type = 'button'; b.textContent = 'Back to the desk';
+    b.addEventListener('click', function () { noteD.close(); }); a.appendChild(b);
+    noteD.showModal(); c.focus();
+    var base = getComputedStyle(c).transform; base = base === 'none' ? '' : base;
+    tween(260, function (k) { c.style.transform = 'translateY(' + (1 - k) * 34 + 'px) scale(' + (.93 + .07 * k) + ') ' + base; c.style.opacity = k; }, function () { c.style.transform = ''; c.style.opacity = ''; });
+  }
+  noteD.addEventListener('close', function () { var v = noteD.querySelector('video'); if (v) { ad.currentTime = v.currentTime; v.pause(); v.removeAttribute('src'); v.load(); if (!calm) ad.play().catch(function () {}); } });
+  addEventListener('pointermove', function (e) {
+    if (noteD.open || menuD.open || moving) return;
+    if (!calm && e.pointerType === 'mouse') place((e.clientX / innerWidth - .5) * .9, (e.clientY / innerHeight - .5) * .9);
+    if (e.pointerType !== 'mouse') return;
+    var n = who(e.clientX, e.clientY); light(n);
+    if (n) { tip.textContent = THINGS[n].label; tip.style.transform = 'translate(' + Math.min(e.clientX + 16, innerWidth - 200) + 'px,' + (e.clientY + 18) + 'px)'; tip.classList.add('on'); }
+    else tip.classList.remove('on');
+  });
+  addEventListener('click', function (e) {
+    if (noteD.open || menuD.open || moving || e.target.closest('.bar') || e.target.closest('dialog') || e.target.classList.contains('spot')) return;
+    var n = matchMedia('(pointer: coarse)').matches ? near(e.clientX, e.clientY) : who(e.clientX, e.clientY); if (n) open(n);
+  });
+  [noteD, menuD].forEach(function (d) { d.addEventListener('click', function (e) { if (e.target === d) d.close(); }); });
+  document.getElementById('menuBtn').addEventListener('click', function () { menuD.showModal(); });
+  document.getElementById('menuClose').addEventListener('click', function () { menuD.close(); });
+  [].forEach.call(document.querySelectorAll('h1 span'), function (el, i) {
+    if (calm) return;
+    el.style.transform = 'translateY(.5em)'; el.style.opacity = 0;
+    setTimeout(function () { tween(800, function (k) { el.style.transform = 'translateY(' + (1 - k) * .5 + 'em)'; el.style.opacity = k; }, function () { el.style.transform = ''; el.style.opacity = ''; }); }, i * 90);
+  });
+  if (!calm) ad.play().catch(function () {});
 })();
 </script>
-</main>
-<footer class="colophon">
-  <p><a href="index.html">Daegan Layman</a> · Writer and researcher · Oklahoma City / remote</p>
-  <p><a href="mailto:daegantassey@gmail.com">daegantassey@gmail.com</a></p>
-</footer>
 </body>
 </html>

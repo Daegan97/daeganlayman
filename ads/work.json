@@ -1,0 +1,80 @@
+{
+  "_howto": "Add or update an ad: copy an item, set spend (lifetime $), poster (image in assets/ads/), optional video (mp4 in assets/ads/), and optional case (a case-study page). The phone shows items with spend >= minSpend, biggest first; first: true puts one at the front. Then run build.py.",
+  "updated": "2026-10-21",
+  "minSpend": 500,
+  "stats": {
+    "spend": "$49K+",
+    "installs": "2,500+",
+    "statics": "180+",
+    "briefs": "140+"
+  },
+  "items": [
+    {
+      "title": "The Map",
+      "format": "Video",
+      "note": "My newest ad, not launched yet",
+      "spend": 0,
+      "first": true,
+      "sound": true,
+      "poster": "assets/ads/the-map.jpg",
+      "video": "assets/ads/the-map.mp4",
+      "vertical": true,
+      "angle": "A 45-second treasure hunt that ends on a real card"
+    },
+    {
+      "title": "Slow and Steady",
+      "format": "Video",
+      "spend": 30606,
+      "poster": "assets/ads/slow-and-steady.jpg",
+      "video": "assets/ads/slow-and-steady.mp4",
+      "vertical": true,
+      "angle": "Pattern interrupt: a sleepy narrator in a feed of hype",
+      "case": "slow-and-steady/index.html"
+    },
+    {
+      "title": "MS Paint",
+      "format": "Static",
+      "spend": 10814,
+      "poster": "assets/ads/ms-paint.jpg",
+      "angle": "A hand-drawn “You | We” chart in MS Paint",
+      "case": "ms-paint/index.html"
+    },
+    {
+      "title": "Group chat",
+      "format": "Static",
+      "spend": 1557,
+      "poster": "assets/ads/op-imessage.jpg",
+      "angle": "A group chat as the proof"
+    },
+    {
+      "title": "Packs hero",
+      "format": "Static",
+      "spend": 1046,
+      "poster": "assets/ads/op-packs-hero.jpg",
+      "angle": "A launch announcement: slabs coming out of packs"
+    },
+    {
+      "title": "How it works",
+      "format": "Video",
+      "spend": 1065,
+      "poster": "assets/ads/how-it-works.jpg",
+      "vertical": true,
+      "angle": "A plain explainer: from the pack to your door"
+    },
+    {
+      "title": "Notes app",
+      "format": "Static",
+      "spend": 965,
+      "poster": "assets/ads/op-notes-app.jpg",
+      "angle": "A list in the Notes app"
+    },
+    {
+      "title": "Turbo mode",
+      "format": "Video",
+      "spend": 653,
+      "poster": "assets/ads/turbo-mode.jpg",
+      "vertical": true,
+      "angle": "A short feature explainer"
+    }
+  ]
+}

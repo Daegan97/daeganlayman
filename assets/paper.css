@@ -1,0 +1,44 @@
+/* A finished paper clipped into the manila folder: white bond, formal title block, nothing handwritten. */
+.folder { width: min(52rem, calc(100% - .75rem)); margin: 1rem auto 3rem; padding: 1.1rem 1.1rem 1.6rem; background: #d9b777; border-radius: 4px 8px 4px 4px; box-shadow: 0 22px 44px rgba(0, 0, 0, .55); position: relative; }
+.bond { position: relative; padding: 4.2rem 4.6rem 4rem; background: #fff; color: #161616; box-shadow: 0 2px 6px rgba(32, 24, 12, .5); }
+.clip { position: absolute; top: -1.5rem; left: 2.6rem; width: 1.1rem; height: 3.4rem; border: 3px solid #8d8f94; border-radius: 1rem; }
+.running { display: flex; justify-content: space-between; gap: 1rem; margin: 0 0 3rem; font: 400 .9375rem/1.3 var(--serif); }
+h1 { margin: 0; text-align: center; font: 600 clamp(1.75rem, 4vw, 2.25rem)/1.2 var(--serif); }
+.sub { margin: .6rem 0 0; text-align: center; font: italic 400 1.25rem/1.3 var(--serif); }
+.by { margin: 1.4rem 0 0; text-align: center; font: 400 1.0625rem/1.5 var(--serif); }
+.abstract { margin: 2.4rem 0; padding: 0 2rem; font: 400 1.125rem/1.55 var(--serif); }
+.abstract b { font-weight: 600; }
+.prose p { margin: 0 0 1em; font: 400 1.1875rem/1.68 var(--serif); }
+.prose h2 { margin: 2em 0 .6em; font: 600 1.3125rem/1.3 var(--serif); }
+.refs { margin-top: 3rem; }
+.refs h2 { margin: 0 0 .8rem; text-align: center; font: 600 1.3125rem/1.3 var(--serif); }
+.refs ol { margin: 0; padding: 0; list-style: none; }
+.refs li { margin: 0 0 .6rem; padding-left: 2rem; text-indent: -2rem; font: 400 1.0625rem/1.5 var(--serif); overflow-wrap: anywhere; }
+@media (max-width: 640px) {
+  .bond { padding: 3rem 1.2rem 2.4rem; }
+  .folder { padding: .6rem .6rem 1rem; }
+  .abstract { padding: 0; }
+  .running { margin-bottom: 2rem; font-size: .875rem; }
+  .running span:first-child { display: none; }
+}
+.bond .note { margin: 1.4rem 0; font: 400 1.0625rem/1.5 var(--serif); }
+.bond .note p { font-size: inherit; line-height: inherit; }
+.bond .prose h3 { margin: 1.6em 0 .4em; font: 600 1.1875rem/1.3 var(--serif); }
+.bond .prose ol, .bond .prose ul { margin: 0 0 1em; padding-left: 1.5rem; }
+.bond .prose li { margin-bottom: .4rem; font: 400 1.1875rem/1.6 var(--serif); }
+.bond .memo { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: .3rem 1.2rem; margin: 0 0 1.6rem; padding-bottom: 1rem; border-bottom: 2px solid #161616; font: 400 1.125rem/1.45 var(--serif); }
+.bond .memo dt { font: 700 .9375rem/1.6 var(--sans); }
+.bond .memo dd { margin: 0; }
+.bond .theory { margin: 1.2rem 0; padding-left: 1.2rem; border-left: 3px solid #161616; }
+.bond figure.table { margin: 1.6rem 0; }
+.bond figure.table figcaption { margin: 0 0 .6rem; font: 600 1.0625rem/1.4 var(--serif); }
+.bond .scroll { overflow-x: auto; }
+.bond table { width: 100%; min-width: 26rem; border-collapse: collapse; font: 400 1.0625rem/1.4 var(--serif); }
+.bond th, .bond td { padding: .4rem .7rem; border-bottom: 1px solid #bdbdbd; text-align: left; vertical-align: top; }
+.bond thead th { border-bottom: 2px solid #161616; }
+.bond .tnote { margin-top: .5rem !important; font: 400 .9375rem/1.4 var(--serif) !important; }
+@media print {
+  .top { display: none; }
+  .folder { padding: 0; background: none; box-shadow: none; }
+  body.ondesk::before { display: none; }
+}
