@@ -54,7 +54,7 @@ a { color: inherit; touch-action: manipulation; }
 .wall { position: fixed; z-index: 2; left: max(2.2vw, 16px); top: max(1.4vh, env(safe-area-inset-top)); pointer-events: none; transition: color .55s; }
 h1 { margin: 0; font-weight: 900; font-stretch: 112%; font-size: clamp(3rem, 7.6vw, 8.4rem); line-height: .9; letter-spacing: -.035em; color: var(--cream); }
 h1 span { display: block; }
-.lede { margin: .9rem 0 0; max-width: 26em; font: 500 clamp(1rem, 1.4vw, 1.3rem)/1.35 var(--sans); }
+.lede { margin: 1.25rem 0 0; max-width: 26em; font: 500 clamp(1rem, 1.4vw, 1.3rem)/1.35 var(--sans); }
 
 .bar { position: fixed; z-index: 3; right: max(1.2vw, 12px); top: max(1.2vh, env(safe-area-inset-top)); display: flex; align-items: center; gap: .6rem; font: 600 .9375rem/1 var(--sans); }
 .bar .pill { display: inline-flex; align-items: center; min-height: 44px; padding: 0 1rem; border-radius: 999px; background: rgba(20, 17, 13, .78); color: var(--cream); border: 0; backdrop-filter: blur(4px); }
@@ -140,7 +140,7 @@ dialog::backdrop { background: rgba(10, 9, 7, .55); }
 <div id="stage">
   <img class="scene" id="day" alt="">
   <img class="scene" id="night" alt="">
-  <video id="ad" src="assets/ads/the-map.mp4" muted loop playsinline preload="auto"></video>
+  <video id="ad" src="assets/ads/the-map.mp4" poster="assets/ads/the-map.jpg" muted loop playsinline preload="auto"></video>
   <canvas id="quiet"></canvas>
   <canvas id="glow"></canvas>
 </div>
@@ -177,7 +177,7 @@ dialog::backdrop { background: rgba(10, 9, 7, .55); }
   var THINGS = {
     writing: { label: 'Writing', title: 'Writing', text: 'Essays and arguments about law, risk and media, plus an op-ed, ad copy and short fiction.', href: 'writing/index.html', go: 'Read my writing' },
     research: { label: 'Research', title: 'Research', text: 'Legal analysis, policy memos, a fraud investigation plan and statistics, from my M.S. in Criminal Justice.', href: 'research/index.html', go: 'Open the case files' },
-    ads: { label: 'Ads', title: 'The Map', text: 'My newest ad, not launched yet: a 45-second treasure hunt that ends on a real card. Everything I do in ads is on the next page.', href: 'ads/index.html', go: 'See my ads and briefs', sound: true },
+    ads: { label: 'Ads', title: 'The Map', text: 'My newest ad: a 45-second treasure hunt that ends on a real card. Everything I do in ads is on the next page.', href: 'ads/index.html', go: 'See my ads and briefs', sound: true },
     about: { label: 'About and resume', title: 'About and resume', text: 'Ten years of explaining things to people: tutor, teacher, re-entry care navigator, child welfare specialist and creative strategist.', href: 'about/index.html', go: 'Read about me' },
     mug: { label: 'Coffee', title: 'Careful, it’s hot', text: 'The McDonald’s hot-coffee case is where one of my essays starts: what companies owe us for the risks they already calculate.', href: 'writing/scalding-coffee/index.html', go: 'Read Scalding Coffee' },
     die: { label: 'A d20', title: 'Natural 20', text: 'I ran the Dungeons & Dragons club at Longfellow Middle School.' },
@@ -397,6 +397,7 @@ dialog::backdrop { background: rgba(10, 9, 7, .55); }
     if (calm) return;
     el.style.transform = 'translateY(.5em)'; el.style.opacity = 0;
     setTimeout(function () { tween(800, function (k) { el.style.transform = 'translateY(' + (1 - k) * .5 + 'em)'; el.style.opacity = k; }, function () { el.style.transform = ''; el.style.opacity = ''; }); }, i * 90);
+    setTimeout(function () { el.style.transform = ''; el.style.opacity = ''; }, 1400); // the name never stays dim
   });
   if (!calm) ad.play().catch(function () {});
 })();
